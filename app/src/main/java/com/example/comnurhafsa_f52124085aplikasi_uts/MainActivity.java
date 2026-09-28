@@ -1,14 +1,11 @@
 package com.example.comnurhafsa_f52124085aplikasi_uts;
-
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-
 public class MainActivity extends AppCompatActivity {
 
     ListView listView;
-
     String[] title = {
             "Rumah Tongkonan",
             "Rumah Laikas",
@@ -17,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
             "Rumah Boyang",
             "Rumah Saoraja"
     };
-
     String[] description = {
             "Sulawesi Selatan - Rumah panggung ikonik Suku Toraja dengan atap melengkung seperti perahu.",
             "Sulawesi Tenggara - Rumah panggung besar tempat bermusyawarah khas Suku Tolaki.",
@@ -26,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
             "Sulawesi Barat - Rumah panggung khas Suku Mandar bertiang kayu tinggi.",
             "Sulawesi Selatan - Rumah panggung bangsawan Suku Bugis bermotif ukiran indah."
     };
-
     int[] images = {
             R.drawable.tongkonan,
             R.drawable.laikas,
@@ -35,17 +30,13 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.boyang,
             R.drawable.saoraja
     };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         listView = findViewById(R.id.listView);
-
         CustomAdapter adapter = new CustomAdapter(this, title, description, images);
         listView.setAdapter(adapter);
-
         listView.setOnItemClickListener((parent, view, position, id) -> {
             Toast.makeText(MainActivity.this, "Kamu memilih: " + title[position], Toast.LENGTH_SHORT).show();
         });
